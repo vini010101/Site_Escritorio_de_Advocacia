@@ -27,11 +27,9 @@ const FeatureSection = () => {
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="flex flex-col md:flex-row justify-between">
           <div className="md:w-1/2 mb-10 md:mb-0">
-            <img 
-              src="/lovable-uploads/f077a551-6876-4d16-9452-b4a1600c9a2a.png"
-              alt="Decorative image" 
-              className="w-full h-auto object-cover rounded-sm"
-            />
+            <div className="bg-sand h-full w-full min-h-[320px] flex items-center justify-center">
+              <div className="text-copper text-4xl font-serif">NC</div>
+            </div>
           </div>
           
           <div className="md:w-1/2 md:pl-12">
