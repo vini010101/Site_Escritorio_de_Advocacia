@@ -41,6 +41,15 @@ const HeroSection = () => {
           <p className="text-sand/80 mt-6 text-center md:text-left">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae erat et dolor.
           </p>
+          
+          {/* Nova imagem abaixo do cabeçalho */}
+          <div className="mt-12 md:mt-16 max-w-xl mx-auto">
+            <img 
+              src="/lovable-uploads/9b56976b-b76e-4c12-b6c9-b74de8e87e53.png" 
+              alt="Woman with elegant white top" 
+              className="w-full h-auto rounded-md shadow-lg animate-entry opacity-0"
+            />
+          </div>
         </div>
       </div>
       <div 
