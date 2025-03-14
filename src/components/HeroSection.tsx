@@ -38,6 +38,9 @@ const HeroSection = () => {
           >
             Neque poro quisqam est qui dolore ipsum.
           </h1>
+          <p className="text-sand/80 mt-6 text-center md:text-left">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae erat et dolor.
+          </p>
         </div>
       </div>
       <div 
