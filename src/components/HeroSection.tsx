@@ -44,7 +44,13 @@ const HeroSection = () => {
         </div>
       </div>
       <div 
-        className="absolute inset-0 bg-geometric-lines opacity-20 mix-blend-overlay"
+        className="absolute inset-0 bg-blend-overlay opacity-20"
+        style={{
+          backgroundImage: "url('/lovable-uploads/f2002e61-43c2-44e6-8f57-5e411548667e.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat"
+        }}
         aria-hidden="true"
       ></div>
     </section>

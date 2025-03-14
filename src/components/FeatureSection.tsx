@@ -18,7 +18,7 @@ const FeatureSection = () => {
       <div 
         className="absolute inset-0 opacity-30"
         style={{
-          backgroundImage: "url('/geometric-lines.svg')",
+          backgroundImage: "url('/lovable-uploads/8f0d8260-0f53-4c1a-9f92-24a8ff288d3e.png')",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat"
         }}
@@ -27,17 +27,12 @@ const FeatureSection = () => {
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="flex flex-col md:flex-row justify-between">
           <div className="md:w-1/2 mb-10 md:mb-0">
-            <div className="bg-sand h-full w-full min-h-[320px] relative overflow-hidden">
-              <div className="absolute inset-0 opacity-10" 
-                style={{
-                  backgroundImage: "url('/geometric-lines.svg')",
-                  backgroundSize: "cover",
-                  backgroundRepeat: "no-repeat"
-                }}
-              ></div>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-copper text-4xl font-serif font-medium">NC</div>
-              </div>
+            <div className="h-full w-full min-h-[320px] relative overflow-hidden">
+              <img 
+                src="/lovable-uploads/3d2836e7-05cb-410c-bbb1-8d0e5288a717.png"
+                alt="NC Office with lawyers" 
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
           
