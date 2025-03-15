@@ -1,5 +1,4 @@
-
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 interface ServiceCardProps {
   title: string;
@@ -9,17 +8,22 @@ interface ServiceCardProps {
 
 const ServiceCard = ({ title, description, delay }: ServiceCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
-  
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsVisible(true), delay);
+    return () => clearTimeout(timer);
+  }, [delay]);
+
   return (
     <div 
-      className="animate-entry opacity-0"
-      style={{ animationDelay: `${delay}ms` }}
+      className={`opacity-0 transition-opacity duration-700 ${isVisible ? 'opacity-100' : ''}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       <div className={`bg-sand p-8 transition-all duration-300 ${isHovered ? 'translate-y-[-5px] shadow-md' : ''}`}>
         <h3 className="text-xl font-display text-olive mb-3">
-          Dignissim libero
+          {title}
         </h3>
         <p className="text-olive-light text-sm leading-relaxed">
           {description}
