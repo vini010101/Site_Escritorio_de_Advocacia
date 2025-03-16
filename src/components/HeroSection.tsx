@@ -1,73 +1,40 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef } from "react";
 
 const HeroSection = () => {
-  const titleRef = useRef<HTMLHeadingElement>(null);
-  
+  const titleRef = useRef(null);
+
   useEffect(() => {
     if (titleRef.current) {
-      titleRef.current.classList.add('animate-fade-in');
+      titleRef.current.classList.add("animate-fade-in");
     }
-    
-    const handleScroll = () => {
-      const elements = document.querySelectorAll('.animate-entry');
-      elements.forEach(el => {
-        const rect = el.getBoundingClientRect();
-        const isVisible = rect.top < window.innerHeight * 0.8;
-        if (isVisible) {
-          el.classList.add('animate-fade-in-up');
-        }
-      });
-    };
-    
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Check initially
-    
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
   }, []);
 
   return (
-    <section className="relative bg-olive py-40 md:py-48 lg:py-56 overflow-hidden">
-      <div className="container mx-auto px-4 md:px-6 flex flex-col md:flex-row items-center">
-        {/* Imagem */}
-        <div className="md:w-1/2 flex justify-center">
-          <img 
-            src="/lovable-uploads/mulher.png" 
-            alt="Woman with elegant white top"
-            className="max-w-full h-auto rounded-lg shadow-lg"
+    <section className="relative pt-20 bg-white text-white">
+      {/* Container do Banner */}
+      <div className="relative w-full flex items-center justify-center">
+        {/* Imagem fixa */}
+        <div className="w-2/3">
+          <img
+            src="/lovable-uploads/mulher.png"
+            alt="Banner"
+            className="w-full h-[500px] object-cover"
           />
         </div>
 
-        {/* Texto */}
-        <div className="md:w-1/2 mt-8 md:mt-0 md:pl-12">
-          <h1 
-            ref={titleRef}
-            className="text-sand text-center md:text-left opacity-0 transition-opacity duration-700 text-3xl font-bold"
-          >
-            Neque porro quisquam est qui dolore ipsum.
-          </h1>
-          <p className="text-sand/80 mt-6 text-center md:text-left text-lg">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae erat et dolor.
-          </p>
-          <div className="mt-6 text-center md:text-left">
-            <button className="px-6 py-3 bg-sand text-olive font-semibold rounded-lg shadow-md hover:bg-sand/80 transition-all">
-              Saiba mais
-            </button>
-          </div>
+        {/* Texto ao lado da imagem */}
+        <div className="w-1/3 p-8">
+        <h1 ref={titleRef} className="text-olive text-3xl font-bold opacity-0 transition-opacity duration-700">
+        Neque porro quisquam est qui dolore ipsum.
+        </h1>
+        <p className="text-olive/80 mt-4">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae erat et dolor.
+        </p>
+        <button className="mt-6 px-6 py-3 bg-olive text-white font-semibold rounded-lg shadow-md hover:bg-olive/80 transition-all">
+        Saiba mais
+        </button>
         </div>
       </div>
-
-      <div 
-        className="absolute inset-0 bg-blend-overlay opacity-20"
-        style={{
-          backgroundImage: "url('/lovable-uploads/f2002e61-43c2-44e6-8f57-5e411548667e.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat"
-        }}
-        aria-hidden="true"
-      ></div>
     </section>
   );
 };

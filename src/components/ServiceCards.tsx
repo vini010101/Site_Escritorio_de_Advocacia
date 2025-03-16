@@ -4,9 +4,10 @@ interface ServiceCardProps {
   title: string;
   description: string;
   delay: number;
+  bgColor: string; // Nova prop para definir a cor de fundo
 }
 
-const ServiceCard = ({ title, description, delay }: ServiceCardProps) => {
+const ServiceCard = ({ title, description, delay, bgColor }: ServiceCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -21,11 +22,13 @@ const ServiceCard = ({ title, description, delay }: ServiceCardProps) => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className={`bg-sand p-8 transition-all duration-300 ${isHovered ? 'translate-y-[-5px] shadow-md' : ''}`}>
+      <div 
+        className={`p-10 h-80 w-full transition-all duration-300 rounded-lg shadow-lg ${isHovered ? 'translate-y-[-5px] shadow-xl' : ''} ${bgColor}`}
+      >
         <h3 className="text-xl font-display text-olive mb-3">
           {title}
         </h3>
-        <p className="text-olive-light text-sm leading-relaxed">
+        <p className="text-olive text-sm leading-relaxed"> {/* Alterei para text-olive */}
           {description}
         </p>
       </div>
@@ -37,15 +40,18 @@ const ServiceCards = () => {
   const services = [
     {
       title: "Dignissim libero",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae erat et dolor finibus feugiat. Nullam mattis urna. Nulla in leo nec felis."
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae erat et dolor finibus feugiat. Nullam mattis urna. Nulla in leo nec felis.",
+      bgColor: "bg-copper", // Cor para o primeiro card (Copper)
     },
     {
       title: "Dignissim libero",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae erat et dolor finibus feugiat. Nullam mattis urna. Nulla in leo nec felis."
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae erat et dolor finibus feugiat. Nullam mattis urna. Nulla in leo nec felis.",
+      bgColor: "bg-gray-300", // Cor para o segundo card (Cinza)
     },
     {
       title: "Dignissim libero",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae erat et dolor finibus feugiat. Nullam mattis urna. Nulla in leo nec felis."
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae erat et dolor finibus feugiat. Nullam mattis urna. Nulla in leo nec felis.",
+      bgColor: "bg-white", // Cor para o terceiro card (Branco)
     }
   ];
 
@@ -59,6 +65,7 @@ const ServiceCards = () => {
               title={service.title} 
               description={service.description} 
               delay={index * 200}
+              bgColor={service.bgColor} // Passa a cor para o card
             />
           ))}
         </div>

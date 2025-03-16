@@ -66,21 +66,24 @@ const Counter = ({ end, label, symbol = '', duration = 2000 }: CounterProps) => 
 
 const StatsSection = () => {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-olive">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-10 md:mb-0 md:w-1/2">
             <span className="text-xs uppercase tracking-wider text-copper">Quem somos</span>
-            <h2 className="text-3xl md:text-4xl font-display text-olive mt-2 mb-6">
+            <h2 className="text-3xl md:text-4xl font-display text-white mt-2 mb-6">
               Pellentesque at arcu felis elementum et ante.
             </h2>
-            <p className="text-olive-light mb-6 max-w-xl">
+            <p className="text-white mb-6 max-w-xl">
               Fusce dignissim magna vehicula, consequat ligula nec, dignissim nulla. Donec vestibulum justo sed enim volutpat, in suscipit nisi posuere. Vivamus id nibh ut nisl.
             </p>
-            <button className="btn-outline">Saiba mais</button>
+            <button className="mt-6 px-6 py-3 bg-gray-400 text-white font-semibold rounded-lg shadow-md hover:bg-gray-300 transition-all">
+            Saiba mais
+          </button>
           </div>
           
           <div className="grid grid-cols-2 gap-12 md:w-1/3">
+
             <Counter end={8} label="Advogados parceiros" />
             <Counter end={47} label="Empresas Parceiras" />
           </div>

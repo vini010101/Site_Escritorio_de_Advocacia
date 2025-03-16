@@ -6,66 +6,6 @@ interface ServiceCardProps {
   delay: number;
 }
 
-const ServiceCard = ({ title, description, delay }: ServiceCardProps) => {
-  const [isHovered, setIsHovered] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setIsVisible(true), delay);
-    return () => clearTimeout(timer);
-  }, [delay]);
-
-  return (
-    <div 
-      className={`opacity-0 transition-opacity duration-700 ${isVisible ? 'opacity-100' : ''}`}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <div className={`bg-sand p-8 transition-all duration-300 ${isHovered ? 'translate-y-[-5px] shadow-md' : ''}`}>
-        <h3 className="text-xl font-display text-olive mb-3">
-          {title}
-        </h3>
-        <p className="text-olive-light text-sm leading-relaxed">
-          {description}
-        </p>
-      </div>
-    </div>
-  );
-};
-
-const ServiceCards = () => {
-  const services = [
-    {
-      title: "Dignissim libero",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae erat et dolor finibus feugiat. Nullam mattis urna. Nulla in leo nec felis."
-    },
-    {
-      title: "Dignissim libero",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae erat et dolor finibus feugiat. Nullam mattis urna. Nulla in leo nec felis."
-    },
-    {
-      title: "Dignissim libero",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae erat et dolor finibus feugiat. Nullam mattis urna. Nulla in leo nec felis."
-    }
-  ];
-
-  return (
-    <section className="py-20 bg-white overflow-hidden">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {services.map((service, index) => (
-            <ServiceCard 
-              key={index} 
-              title={service.title} 
-              description={service.description} 
-              delay={index * 200}
-            />
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
 
 const FeatureItem = ({ title, description }: { title: string; description: string }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -88,50 +28,52 @@ const FeatureItem = ({ title, description }: { title: string; description: strin
 
 const FeatureSection = () => {
   return (
-    <section className="py-20 bg-offwhite relative overflow-hidden">
-      <div 
-        className="absolute inset-0 opacity-30"
-        style={{
-          backgroundImage: "url('/lovable-uploads/8f0d8260-0f53-4c1a-9f92-24a8ff288d3e.png')",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat"
-        }}
-      ></div>
-      
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <div className="flex flex-col md:flex-row justify-between">
-          <div className="md:w-1/2 mb-10 md:mb-0">
-            <div className="h-full w-full min-h-[320px] relative overflow-hidden">
-              <img 
-                src="/lovable-uploads/3d2836e7-05cb-410c-bbb1-8d0e5288a717.png"
-                alt="NC Office with lawyers" 
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
+    <section className="py-20 relative overflow-hidden">
+  <div 
+    className="absolute inset-0"
+    style={{
+      backgroundImage: "url('/lovable-uploads/pattern-background.png')", // Caminho da imagem de fundo
+      backgroundSize: "cover", // Faz a imagem de fundo cobrir toda a área
+      backgroundPosition: "center", // Centraliza a imagem de fundo
+      backgroundRepeat: "no-repeat",
+      height: "100%", // Garante que a imagem de fundo ocupe toda a altura da seção
+      zIndex: -1
+    }}
+  ></div>
+  
+  <div className="container mx-auto px-4 md:px-6 relative z-10">
+    <div className="flex justify-center items-center"> {/* Centraliza horizontal e verticalmente */}
+      <div className="w-full md:w-1/2">
+        <div className="relative overflow-hidden" style={{ height: '400px' }}> {/* Aumenta a altura da imagem */}
+          <img 
+            src="/lovable-uploads/consultorias.png"
+            alt="Consultoria"
+            className="w-full h-full object-cover"
+            style={{ objectPosition: 'center' }} // Centraliza a imagem e permite o corte
+          />
           
-          <div className="md:w-1/2 md:pl-12">
-            <div className="max-w-md">
-              <FeatureItem 
-                title="Cras dignissim dignissim libero et faucibus" 
-                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae erat et dolor finibus feugiat. Nullam mattis urna. Nulla in leo nec felis elementum pellentesque. In hac habitasse platea."
-              />
-              
-              <FeatureItem 
-                title="Cras dignissim dignissim libero et faucibus" 
-                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae erat et dolor finibus feugiat. Nullam mattis urna. Nulla in leo nec felis elementum pellentesque. In hac habitasse platea."
-              />
-            </div>
-          </div>
+          {/* Cards sobre a imagem */}
+          <div className="absolute inset-0 flex justify-between items-center px-4 md:px-12 z-20">
+              <div className="w-full md:w-1/2 lg:w-1/2 bg-white p-8 shadow-lg rounded-lg opacity-90">
+              <h3 className="text-xl font-semibold mb-4">Cras dignissim, aptops text sassdd</h3>
+              <p>edjefkjifkrfkimf
+              keddokdklfdkfdkifdk
+              fkdfkedfdkfedkfjdkfd
+              kfkdfkdfkdkj</p>
+               </div>
+              <div className="w-full md:w-1/2 lg:w-1/3 bg-white p-8 shadow-lg rounded-lg opacity-90">
+              <h3 className="text-xl font-semibold mb-4">Card 2</h3>
+              <p>Descrição do card 2.</p>
+              </div>
+              </div>
+
+          
         </div>
       </div>
-      
-      <div className="text-center mt-10">
-        <button className="bg-olive text-white py-3 px-8 uppercase tracking-wider text-sm hover:bg-olive-dark transition-colors duration-300 mx-auto">
-          Clique aqui para agendar sua consultoria
-        </button>
-      </div>
-    </section>
+    </div>
+  </div>
+</section>
+  
   );
 };
 
