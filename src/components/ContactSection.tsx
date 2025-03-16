@@ -53,7 +53,7 @@ const ContactSection = () => {
   <button className="bg-olive text-white py-2 px-5 rounded-md text-sm transition duration-300 hover:bg-olive-dark">
     Continua Lendo
   </button>
-  <button className="bg-copper text-white py-2 px-5 rounded-md text-sm transition duration-300 hover:bg-olive-dark">
+  <button className="bg-copper text-white py-2 px-5 rounded-md text-sm transition duration-300 hover:bg-copper-dark">
     Ver mais Posts
   </button>
 </div>
