@@ -23,44 +23,43 @@ const ContactSection = () => {
       
       {/* Imagem no topo centralizada */}
       <div className="w-full flex justify-center mt-[-80px]">
-    <img 
-    src="/lovable-uploads/nc.png" 
-    alt="Banner de Contato" 
-    className="w-auto h-[450px] object-cover mx-auto"
-    />
-  </div>
+        <img 
+          src="/lovable-uploads/nc.png" 
+          alt="Banner de Contato" 
+          className="w-auto h-[450px] object-cover mx-auto"
+        />
+      </div>
 
-  <div className="container mx-auto px-4 md:px-6 mt-[95px]">
-    <div className="text-center mb-16">
-      <p className="text-xl md:text-2xl font-display text-copper mb-6">
-      17 de Janeiro de 2025 TRIBUTAÇÃO
-      </p>
-      <h3 className="text-xl md:text-2xl font-display text-olive mb-6 text-left ml-[465px]">
-    Consectur Ipsum quia  
-    <br />dolor sit amet
-    </h3>
-    <div className="flex flex-col items-center text-center">
-  <p className="text-olive text-sm">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.  
-    Nullam vehicula, odio ut aliquet cursus, lacus libero malesuada purus,  
-    nec varius mauris odio ut erat.  
-    <br /><br />
-    Cras tincidunt, nisl nec vestibulum elementum,  
-    ligula purus fermentum libero, et gravida sapien nisi et velit.
-  </p>
+      <div className="container mx-auto px-4 md:px-6 mt-[95px]">
+        <div className="text-center mb-16">
+          <p className="text-xl md:text-2xl font-display text-copper mb-6">
+            17 de Janeiro de 2025 - TRIBUTAÇÃO
+          </p>
+          <h3 className="text-xl md:text-2xl font-display text-olive mb-6 text-left ml-[465px]">
+            Consectur Ipsum quia  
+            <br />dolor sit amet
+          </h3>
+          <div className="flex flex-col items-center text-center">
+            <p className="text-olive text-sm leading-tight">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.  
+              Nullam vehicula, odio ut aliquet cursus, lacus libero malesuada purus,
+              nec varius mauris odio ut erat.
+              <br /><br />
+              Cras tincidunt, nisl nec vestibulum elementum,
+              ligula purus fermentum libero, et gravida sapien nisi et velit.
+            </p>
 
-  <div className="mt-6 flex gap-4">
-  <button className="bg-olive text-white py-2 px-5 rounded-md text-sm transition duration-300 hover:bg-olive-dark">
-    Continua Lendo
-  </button>
-  <button className="bg-copper text-white py-2 px-5 rounded-md text-sm transition duration-300 hover:bg-copper-dark">
-    Ver mais Posts
-  </button>
-</div>
-
-</div>
-  </div>
-  </div>
+            <div className="mt-6 flex gap-4">
+              <button className="bg-olive text-white py-2 px-5 rounded-md text-sm transition duration-300 hover:bg-olive-dark">
+                Continua Lendo
+              </button>
+              <button className="bg-copper text-white py-2 px-5 rounded-md text-sm transition duration-300 hover:bg-copper-dark">
+                Ver mais Posts
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">

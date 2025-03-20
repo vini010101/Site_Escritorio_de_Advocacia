@@ -17,17 +17,19 @@ const Navbar = () => {
 
   return (
     <header className="bg-olive fixed w-full z-50 shadow-md">
-      <div className="container mx-auto flex justify-between items-center px-4 md:px-6 py-4">
-        <div className="flex items-center gap-2">
-          <div className="text-white">
-            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M20 2L2 38H38L20 2Z" stroke="currentColor" strokeWidth="1.5" />
-            </svg>
-          </div>
-          <div className="font-display uppercase tracking-widest text-white">
-            <div className="text-sm font-medium">Najjar</div>
-            <div className="text-xs tracking-[0.3em]">Capdeville</div>
-          </div>
+  <div className="container mx-auto flex justify-between items-center px-4 md:px-6 py-4">
+    <div className="flex flex-col items-center gap-20"> {/* Aumentei o gap para 6 (pode ajustar conforme necessário) */}
+      <div className="flex items-center gap-10"> {/* Flex para alinhar imagem e linha */}
+        <div className="text-white">
+          {/* Substitua pelo caminho da sua imagem SVG */}
+          <img src="lovable-uploads/najjar-capdeville.svg" alt="Logo" width="250" height="80" />
+        </div>
+        <div className="border-t-2 border-white w-80"></div> {/* Linha horizontal ao lado da imagem */}
+      </div>
+      <div className="font-display uppercase tracking-widest text-copper">
+        <h2>Neque poro quisqam est<br /> qui dolore ipsum</h2> {/* O texto vai ficar abaixo da imagem */}
+      </div>
+          
         </div>
         <nav className="hidden md:flex flex-col items-start space-y-4">
         <Link to="/" className="text-white nav-link">Quem somos</Link>

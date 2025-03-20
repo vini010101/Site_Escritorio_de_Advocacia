@@ -11,7 +11,6 @@ const ServiceCard = ({ title, description, delay, bgColor }: ServiceCardProps) =
   const [isHovered, setIsHovered] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
 
-
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), delay);
     return () => clearTimeout(timer);
@@ -29,13 +28,10 @@ const ServiceCard = ({ title, description, delay, bgColor }: ServiceCardProps) =
           ${isHovered ? "translate-y-[-5px] shadow-xl" : ""} ${bgColor}`}
         >
           <h3 className="text-xl font-display text-olive mb-3 text-center">{title}</h3>
+          {/* Coloquei a descrição dentro do card, abaixo do título */}
+          <p className="text-sm leading-relaxed text-center text-olive">{description}</p>
         </div>
       </div>
-
-      {/* Texto abaixo do card */}
-      <p className="mt-4 text-olive text-sm leading-relaxed text-center w-80">
-        {description}
-      </p>
     </div>
   );
 };
@@ -44,12 +40,12 @@ const ServiceCards = () => {
   const services = [
     {
       title: "Dignissim libero",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula quam sed metus vestibulum, nec interdum arcu blandit. Mauris gravida ante et velit suscipit, euismod pretium mi fermentum. Phasellus non nulla risus. Sed sed laoreet risus.",
       bgColor: "bg-gray-300",
     },
     {
       title: "Dignissim libero",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula quam sed metus vestibulum, nec interdum arcu blandit. Mauris gravida ante et velit suscipit, euismod pretium mi fermentum. Phasellus non nulla risus. Sed sed laoreet risus.",
       bgColor: "bg-white",
     },
   ];
@@ -61,9 +57,9 @@ const ServiceCards = () => {
         className="absolute inset-0"
         style={{
           backgroundImage: "url('/lovable-uploads/pattern-background.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover", // Garante que a imagem cubra toda a área sem ser distorcida
+          backgroundPosition: "center center", // Centraliza a imagem
+          backgroundRepeat: "no-repeat", // Evita repetição da imagem
           height: "100%",
           zIndex: -2, // Mantém a imagem no fundo
         }}
@@ -80,7 +76,7 @@ const ServiceCards = () => {
 
       {/* Container para os cards */}
       <div className="relative container mx-auto px-4 md:px-6 flex flex-col items-center">
-      <div className="absolute bottom-[-865px] left-1/2 transform -translate-x-1/2 flex flex-col md:flex-row justify-center items-center gap-8 z-20 mt-[150px]">
+        <div className="absolute bottom-[-865px] left-1/2 transform -translate-x-1/2 flex flex-col md:flex-row justify-center items-center gap-8 z-20 mt-[150px]">
           {services.map((service, index) => (
             <ServiceCard
               key={index}
@@ -93,7 +89,7 @@ const ServiceCards = () => {
         </div>
 
         {/* Botão único abaixo dos cards */}
-        <button className="absolute bottom-[-1000px] left-1/2 transform -translate-x-1/2 flex flex-col md:flex-row justify-center items-center gap-8 z-20   lef mt-8 bg-olive text-white py-3 px-8 rounded-lg text-lg transition duration-300 hover:bg-olive-dark">
+        <button className="absolute bottom-[-1000px] left-1/2 transform -translate-x-1/2 flex flex-col md:flex-row justify-center items-center gap-8 z-20 mt-8 bg-olive text-white py-3 px-8 rounded-lg text-lg transition duration-300 hover:bg-olive-dark">
           Clique aqui para agendar a sua consultoria
         </button>
       </div>
